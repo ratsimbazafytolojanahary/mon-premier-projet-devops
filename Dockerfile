@@ -1,5 +1,6 @@
 FROM python:3.11-slim
 WORKDIR /app
-RUN pip install psycopg2-binary
-COPY test_postgres.py .
-CMD ["python", "test_postgres.py"]
+RUN pip install psycopg2-binary flask
+COPY app.py .
+EXPOSE 5000
+CMD ["python", "app.py"]
